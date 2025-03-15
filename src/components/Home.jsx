@@ -6,7 +6,7 @@ const Home = () => {
 
     const coffees = useLoaderData();
 
-    // better use tanstack query or similar packages
+    // load default state with existing Coffees
     const [loadedCoffees, setLoadedCoffees] = useState(coffees);
 
     return (
@@ -14,6 +14,7 @@ const Home = () => {
             <h2 className='text-4xl font-bold text-center m-8'>Welcome To Coffee Shop</h2>
 
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+                {/* Pass State Datas to Coffee Component */}
                 {
                     loadedCoffees.map(coffee => <Coffee
                         coffee={coffee}

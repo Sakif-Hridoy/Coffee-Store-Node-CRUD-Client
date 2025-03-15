@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
 
     const links = <>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/addCoffee">Add Coffee</NavLink></li>
+        <li><NavLink className="font-bold" to="/">Home</NavLink></li>
+        <li><NavLink className="font-bold" to="/addCoffee">Add Coffee</NavLink></li>
         
     </>
 
@@ -41,7 +41,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+            <NavLink className="btn" to="/signup">Sign Up</NavLink>
             </div>
         </div>
     );

@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
+//Load All State Datas from Home
 const Coffee = ({ coffee, loadedCoffees, setLoadedCoffees }) => {
   const { _id, name, quantity, supplier, taste, photo } = coffee;
-
+//DELETE A Coffee
   const handleDelete = (_id) => {
     Swal.fire({
       title: "Are you sure?",
