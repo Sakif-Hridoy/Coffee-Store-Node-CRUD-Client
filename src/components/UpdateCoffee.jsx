@@ -38,7 +38,7 @@ const UpdateCoffee = () => {
                     });
 
                     // Fetch the updated data and update state
-                    fetchUpdatedData();
+                   
                 }
             });
 
@@ -46,19 +46,6 @@ const UpdateCoffee = () => {
         navigate('/', { replace: true });
     };
 
-    // Function to fetch updated coffee data
-    const fetchUpdatedData = () => {
-        fetch(`http://localhost:5000/coffee/${_id}`)
-            .then(res => res.json())
-            .then(data => {
-                setUpdatedCoffee(data);  // Update state with the latest coffee data
-            });
-    };
-
-    // Initially load the coffee data
-    useEffect(() => {
-        fetchUpdatedData();  // Fetch initial coffee data
-    }, [_id]);  // Dependency array ensures it only runs on the first render or when _id changes
 
     return (
         <div className="lg:w-3/4 mx-auto">
