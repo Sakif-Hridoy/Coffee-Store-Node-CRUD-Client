@@ -10,6 +10,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import AuthProvider from "./providers/AuthProvider";
 import Users from "./components/Users";
+import PrivateRoute from "./components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,11 +24,11 @@ const router = createBrowserRouter([
       },
       {
         path: "addCoffee",
-        element: <AddCoffee></AddCoffee>,
+        element: <PrivateRoute><AddCoffee></AddCoffee></PrivateRoute>,
       },
       {
         path: "updateCoffee/:id",
-        element: <UpdateCoffee></UpdateCoffee>,
+        element: <PrivateRoute> <UpdateCoffee></UpdateCoffee> </PrivateRoute>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/coffee/${params.id}`),
       },
@@ -41,8 +42,8 @@ const router = createBrowserRouter([
       },
       {
         path:"users",
-        element:<Users></Users>,
-        loader:()=> fetch('http://localhost:5000/users')
+        element:<PrivateRoute> <Users></Users></PrivateRoute>,
+        loader:()=> fetch('http://localhost:5000/coffee')
       }
     ],
   },

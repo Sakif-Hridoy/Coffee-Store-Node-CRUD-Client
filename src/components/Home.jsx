@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Coffee from './Coffee';
+import { AuthContext } from '../providers/AuthProvider';
 
 const Home = () => {
 
     const coffees = useLoaderData();
+    const { user } = useContext(AuthContext);
 
     // load default state with existing Coffees
     const [loadedCoffees, setLoadedCoffees] = useState(coffees);
