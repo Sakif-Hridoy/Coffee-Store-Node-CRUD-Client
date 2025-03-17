@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Header = () => {
-    const { user, logoutUser } = useContext(AuthContext);
+    const { user,signInUser, logoutUser } = useContext(AuthContext);
 
     const handleLogout = () => {
         logoutUser()
@@ -14,7 +14,7 @@ const Header = () => {
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
-                <a className="btn btn-ghost text-xl">Coffee Shop</a>
+                <Link to="/" className="btn btn-ghost text-xl font-bold">Coffee Shop</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -24,15 +24,19 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user ? (
+                {user && signInUser ? (
                     <>
                         <span className="mr-3 font-bold">{user.displayName || user.email}</span>
                         <button onClick={handleLogout} className="btn btn-sm btn-error">Logout</button>
                     </>
                 ) : (
+                    <>
                     <NavLink className="btn btn-sm btn-primary" to="/signin">Sign In</NavLink>
+                    <NavLink className="btn btn-sm ml-2" to="/signup">Sign Up</NavLink>
+                    </>
+                    
                 )}
-                <NavLink className="btn btn-sm ml-2" to="/signup">Sign Up</NavLink>
+                
             </div>
         </div>
     );

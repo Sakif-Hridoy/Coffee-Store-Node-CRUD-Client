@@ -51,9 +51,7 @@ const AddCoffee = () => {
       <div className="text-center p-10">
         <h1 className="text-5xl font-bold">Add Coffee!</h1>
         <p className="py-6">
-          Provident cupiditate voluptatem et in.Quaerat fugiat ut assumenda
-          excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
-          id nisi.
+         Add Coffee with your favorite ingredients
         </p>
       </div>
       <div className="card bg-base-100 w-full shadow-2xl p-8">

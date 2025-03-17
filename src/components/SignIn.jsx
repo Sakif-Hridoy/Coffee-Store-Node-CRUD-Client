@@ -17,9 +17,10 @@ const SignIn = () => {
       .then(() => {
         navigate(from, { replace: true });
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
+    navigate("/", { replace: true });
   };
 
   return (
@@ -32,10 +33,27 @@ const SignIn = () => {
           <form onSubmit={handleSignIn} className="card-body">
             <fieldset className="fieldset">
               <label className="fieldset-label">Email</label>
-              <input type="email" name="email" className="input" placeholder="Email" required />
+              <input
+                type="email"
+                name="email"
+                className="input"
+                placeholder="Email"
+                required
+              />
               <label className="fieldset-label">Password</label>
-              <input type="password" name="password" className="input" placeholder="Password" required />
-              <h5 className="">Not Registered? <Link className="text-blue-700" to="/signup">Sign Up</Link></h5>
+              <input
+                type="password"
+                name="password"
+                className="input"
+                placeholder="Password"
+                required
+              />
+              <h5 className="">
+                Not Registered?{" "}
+                <Link className="text-blue-700" to="/signup">
+                  Sign Up
+                </Link>
+              </h5>
               <button className="btn btn-neutral mt-4">Sign In</button>
             </fieldset>
           </form>
