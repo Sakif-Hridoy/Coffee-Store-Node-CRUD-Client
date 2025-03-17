@@ -18,7 +18,7 @@ const UpdateUser = () => {
 
         const updateUser = { name, email };
 
-        fetch(`http://localhost:5000/users/${_id}`, {
+        fetch(`https://coffee-store-node-crud-server.onrender.com/users/${_id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(updateUser),

@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/coffee"),
+        loader: () => fetch("https://coffee-store-node-crud-server.onrender.com/coffee"),
       },
       {
         path: "addCoffee",
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         path: "updateCoffee/:id",
         element: <PrivateRoute> <UpdateCoffee></UpdateCoffee> </PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffee/${params.id}`),
+          fetch(`https://coffee-store-node-crud-server.onrender.com/coffee/${params.id}`),
       },
       {
         path: "signin",
@@ -44,12 +44,12 @@ const router = createBrowserRouter([
       {
         path:"users",
         element:<PrivateRoute> <Users></Users></PrivateRoute>,
-        loader:()=> fetch('http://localhost:5000/users')
+        loader:()=> fetch('https://coffee-store-node-crud-server.onrender.com/users')
       },
       {
         path:"/users/updateUser/:id",
         element:<UpdateUser></UpdateUser>,
-        loader:({params})=> fetch(`http://localhost:5000/users/${params.id}`)
+        loader:({params})=> fetch(`https://coffee-store-node-crud-server.onrender.com/users/${params.id}`)
       }
     ],
   },

@@ -22,7 +22,7 @@ const UpdateCoffee = () => {
 
         const updateCoffee = { name, quantity, supplier, taste, category, details, photo };
 
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://coffee-store-node-crud-server.onrender.com/coffee/${_id}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(updateCoffee),

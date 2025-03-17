@@ -21,7 +21,7 @@ const SignUp = () => {
           name,
           email,
         };
-        return fetch("http://localhost:5000/users", {
+        return fetch("https://coffee-store-node-crud-server.onrender.com/users", {
           method: "POST",
           headers: { "content-type": "application/json" },
           body: JSON.stringify(newUser),
