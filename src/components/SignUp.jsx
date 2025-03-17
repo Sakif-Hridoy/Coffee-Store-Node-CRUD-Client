@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
@@ -37,13 +38,11 @@ const SignUp = () => {
   };
   return (
     <div className="hero bg-base-200 min-h-screen">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col lg:flex-col">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Sign In now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+          <h1 className="text-5xl font-bold">Sign Up now!</h1>
+          <p className="py-6 text-center">
+            Sign Up Here with your email
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -70,6 +69,7 @@ const SignUp = () => {
                 placeholder="Password"
                 name="password"
               />
+              <h5 className="">Already Registered? <Link className="text-blue-700" to="/signin">Sign In</Link></h5>
               <button className="btn btn-neutral mt-4">Sign Up</button>
             </fieldset>
           </form>
