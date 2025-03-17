@@ -35,10 +35,11 @@ const UpdateUser = () => {
 
                     // Fetch the updated data and update state
                 }
+                navigate('/users', { replace: true });
+
             });
 
         // After update, redirect to home page
-        navigate('/users', { replace: true });
     };
 
     // Function to fetch updated user data

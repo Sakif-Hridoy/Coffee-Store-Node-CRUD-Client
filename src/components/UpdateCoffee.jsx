@@ -5,8 +5,8 @@ import Swal from 'sweetalert2';
 const UpdateCoffee = () => {
     const coffee = useLoaderData();  // Initially loaded coffee data
     const navigate = useNavigate();
-    const [updatedCoffee, setUpdatedCoffee] = useState(coffee);  // State for updated coffee data
-    const { _id, name, quantity, supplier, category, taste, details, photo } = updatedCoffee;
+    // const [updatedCoffee, setUpdatedCoffee] = useState(coffee);  // State for updated coffee data
+    const { _id, name, quantity, supplier, category, taste, details, photo } = coffee;
 
     // Function to handle coffee update
     const handleUpdateCoffee = (event) => {
@@ -40,10 +40,11 @@ const UpdateCoffee = () => {
                     // Fetch the updated data and update state
                    
                 }
+                navigate('/', { replace: true });
+
             });
 
         // After update, redirect to home page
-        navigate('/', { replace: true });
     };
 
 
